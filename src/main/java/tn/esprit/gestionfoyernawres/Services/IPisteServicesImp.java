@@ -1,5 +1,6 @@
 package tn.esprit.gestionfoyernawres.Services;
 
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import tn.esprit.gestionfoyernawres.Repositories.PisteRepository;
@@ -8,9 +9,10 @@ import tn.esprit.gestionfoyernawres.entities.Piste;
 import java.util.List;
 
 @Service
+@RequiredArgsConstructor
 public class IPisteServicesImp implements IPisteServices{
-    @Autowired
-    PisteRepository pisteRepository;
+
+    private final PisteRepository pisteRepository;
     @Override
     public Piste addPiste(Piste piste) {
         return pisteRepository.save(piste);

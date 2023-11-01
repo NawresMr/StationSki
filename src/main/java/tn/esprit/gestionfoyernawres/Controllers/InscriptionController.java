@@ -13,12 +13,14 @@ import java.util.List;
 public class InscriptionController {
     private final IInscriptionServices iInscriptionServices;
 
-   /* @PostMapping
-    public Inscription addInscription(@RequestBody Inscription inscription){
-       return iInscriptionServices.addInscription(inscription);
-    }*/
+    @PostMapping("/{numSkieur}")
+    public Inscription addRegistrationAndAssignToSkier(@RequestBody Inscription inscription, @PathVariable Long numSkieur) {
+        return iInscriptionServices.addInscription(inscription, numSkieur);
+    }
+
     @PutMapping
     public Inscription updateInscription(@RequestBody Inscription inscription){
+
         return iInscriptionServices.updateInscription(inscription);
     }
     @GetMapping("/{numInscription}")
@@ -37,5 +39,10 @@ public class InscriptionController {
         iInscriptionServices.deleteById(numInscription);
     }
 
+
+    @PutMapping("add/{numInscription}/{numCourse}")
+    public Inscription assignRegistrationToCourse(@PathVariable Long numInscription, @PathVariable Long numCourse) {
+        return iInscriptionServices.assignRegistrationToCourse(numInscription, numCourse);
+    }
 
 }

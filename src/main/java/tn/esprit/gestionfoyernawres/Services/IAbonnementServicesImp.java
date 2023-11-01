@@ -1,5 +1,6 @@
 package tn.esprit.gestionfoyernawres.Services;
 
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import tn.esprit.gestionfoyernawres.Repositories.AbonnementRepository;
@@ -7,9 +8,10 @@ import tn.esprit.gestionfoyernawres.entities.Abonnement;
 
 import java.util.List;
 @Service
+@RequiredArgsConstructor
 public class IAbonnementServicesImp implements IAbonnementServices {
-    @Autowired
-    AbonnementRepository abonnementRepository;
+
+   private final  AbonnementRepository abonnementRepository;
 
     @Override
     public Abonnement addAbonnement(Abonnement abonnement) {

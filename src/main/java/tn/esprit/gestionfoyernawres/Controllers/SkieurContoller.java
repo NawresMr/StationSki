@@ -44,4 +44,10 @@ public class SkieurContoller {
     public void deleteById(@PathVariable long numSkieur) {
         iSkieurServices.deleteById(numSkieur);
     }
+
+
+    @PutMapping("/{numSkieur}/{numPiste}")
+    public Skieur assignSkierToPiste(@PathVariable Long numSkieur, @PathVariable Long numPiste){
+        return iSkieurServices.assignSkierToPiste(numSkieur, numPiste);
+    }
 }

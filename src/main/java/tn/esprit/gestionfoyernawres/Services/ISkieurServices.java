@@ -13,4 +13,6 @@ public interface ISkieurServices {
     void deleteById(long numSkieur);
 
     Skieur assignSkierToPiste(Long numSkieur, Long numPiste);
+
+    Skieur addSkierAndAssignToCourse(Skieur skieur, Long numCourse);
 }

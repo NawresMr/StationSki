@@ -68,6 +68,5 @@ public class IInscriptionServicesImp implements IInscriptionServices{
         inscription.setCours(cours);
         return inscriptionRepository.save(inscription);
 
-
     }
 }

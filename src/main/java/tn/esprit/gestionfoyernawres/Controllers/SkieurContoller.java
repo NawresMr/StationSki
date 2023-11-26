@@ -50,4 +50,9 @@ public class SkieurContoller {
     public Skieur assignSkierToPiste(@PathVariable Long numSkieur, @PathVariable Long numPiste){
         return iSkieurServices.assignSkierToPiste(numSkieur, numPiste);
     }
+@PostMapping("/{numCourse}")
+    public Skieur addSkierAndAssignToCourse(@RequestBody Skieur skieur, @PathVariable Long numCourse){
+        return iSkieurServices.addSkierAndAssignToCourse(skieur, numCourse);
+
+    }
 }

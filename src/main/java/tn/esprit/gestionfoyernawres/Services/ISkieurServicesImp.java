@@ -71,8 +71,7 @@ public class ISkieurServicesImp implements ISkieurServices{
         //Set<Piste> pisteSet = skieur.getPisteSet();
          //pisteSet.add(piste);
          //skieur.setPisteSet(pisteSet);
-
-    return skieur ;
+        return skieurRepository.save(skieur);
     }
 
     @Override
@@ -100,5 +99,29 @@ public class ISkieurServicesImp implements ISkieurServices{
         //pour l'afficher dans la console
         log.info("test schedule");
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 }

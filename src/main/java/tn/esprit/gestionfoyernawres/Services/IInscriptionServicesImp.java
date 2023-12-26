@@ -60,6 +60,33 @@ public class IInscriptionServicesImp implements IInscriptionServices{
 
     @Override
     public Inscription assignRegistrationToCourse(Long numInscription, Long numCourse) {
+        Inscription inscription = inscriptionRepository.findById(numInscription)
+                .orElse(null);
+        Cours cours = coursRepository.findById(numCourse).orElse(null);
+        inscription.setCours(cours);
+
+        return inscriptionRepository.save(inscription);
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   /* public Inscription assignRegistrationToCourse(Long numInscription, Long numCourse) {
         Cours cours = coursRepository.findById(numCourse)
                 .orElse(null);
         Inscription inscription = inscriptionRepository.findById(numInscription)
@@ -68,5 +95,30 @@ public class IInscriptionServicesImp implements IInscriptionServices{
         inscription.setCours(cours);
         return inscriptionRepository.save(inscription);
 
-    }
+    }*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
